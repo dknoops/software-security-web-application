@@ -37,7 +37,7 @@
   }
 }
 
-/* Headers */
+/* Header */
 .container {
   width: 80%;
   margin-left: 10%;
@@ -57,4 +57,33 @@
 
 .navbar {
   padding: 0.5rem 7rem;
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(35, 35, 37);
+  color: white;
+  text-align: center;
+}
+
+#terms-of-use {
+  padding-top: 2.5em;
+}
+
+#terms-of-use > p {
+  margin-bottom: 0.5em;
+}
+
+#terms-of-use > p > a {
+  color: white;
+}
+
+#copyright {
+  color: rgb(107, 102, 102);
+  font-size: 0.85em;
+  padding-bottom: 2em;
 }
