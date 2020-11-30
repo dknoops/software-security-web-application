@@ -9,7 +9,7 @@ export default function Header() {
   const isAuthenticated = useAuth0();
   return (
     <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="#home">dknoops</Navbar.Brand>
+      <Navbar.Brand href="/">dknoops</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
