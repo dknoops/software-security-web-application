@@ -13,11 +13,14 @@ const Cards = () => {
     const getAllCards = async () => {
       try {
         const accessToken = await getAccessTokenSilently();
-        const response = await fetch("http://localhost:3001/cards", {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        });
+        const response = await fetch(
+          "http://dknoopssoftwaresecuritybackend-env-1.eba-mzfixv3x.us-east-1.elasticbeanstalk.com/cards",
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          }
+        );
         const json = await response.json();
         setData(json);
       } catch (e) {
