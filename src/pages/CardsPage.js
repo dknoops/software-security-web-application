@@ -14,7 +14,7 @@ const Cards = () => {
       try {
         const accessToken = await getAccessTokenSilently();
         const response = await fetch(
-          "http://dknoopssoftwaresecuritybackend-env-1.eba-mzfixv3x.us-east-1.elasticbeanstalk.com/cards",
+          "https://api-software-security.dknoops.xyz/cards",
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
