@@ -6,15 +6,14 @@ import LogoutButton from "./LogoutButton";
 import { useAuth0 } from "@auth0/auth0-react";
 
 export default function Header() {
-  const isAuthenticated = useAuth0();
+  const { isAuthenticated, isLoading } = useAuth0();
   return (
     <Navbar bg="light" expand="lg">
       <Navbar.Brand href="/">dknoops</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
-          {!isAuthenticated.isAuthenticated && <LoginButton />}
-          {isAuthenticated.isAuthenticated && <LogoutButton />}
+          {isLoading || isAuthenticated ? <LogoutButton /> : <LoginButton />}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
