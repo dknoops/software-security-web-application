@@ -13,14 +13,11 @@ const Cards = () => {
     const getAllCards = async () => {
       try {
         const accessToken = await getAccessTokenSilently();
-        const response = await fetch(
-          "https://api-software-security.dknoops.xyz/cards",
-          {
-            headers: {
-              Authorization: `Bearer ${accessToken}`,
-            },
-          }
-        );
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/cards`, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
         const json = await response.json();
         setData(json);
       } catch (e) {
