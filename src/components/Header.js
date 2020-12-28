@@ -13,7 +13,7 @@ export default function Header() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
-          {isLoading || isAuthenticated ? <LogoutButton /> : <LoginButton />}
+          {!isLoading && isAuthenticated ? <LogoutButton /> : <LoginButton />}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
