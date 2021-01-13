@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="footer">
       <div id="terms-of-use">
         <p>
           <a href="/terms-of-use">Terms of Use</a> &#8226;{" "}

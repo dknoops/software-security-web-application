@@ -1,53 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
-import Card from "../components/Card";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import GetCards from "../api/Get-Cards";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
 
-const Cards = () => {
-  const { getAccessTokenSilently } = useAuth0();
+export default function Cards() {
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    const getAllCards = async () => {
-      try {
-        const accessToken = await getAccessTokenSilently();
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/cards`, {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        });
-        const json = await response.json();
-        setData(json);
-      } catch (e) {
-        console.log(e.message);
-      }
-    };
-
-    getAllCards();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
-    <Container>
+    <Container id="cards-container">
       <h1 className="page-title">Cards</h1>
       <Row>
-        {data !== undefined &&
-          data.map((card, i) => (
-            <Col md>
-              <Card
-                key={i}
-                name={card.name}
-                description={card.description}
-                image={card.image}
-              />
-            </Col>
-          ))}
+        <GetCards data={data} setData={setData} />
       </Row>
-      <p className="page-text">More coming soon...</p>
+      <Button id="post-card-btn">
+        <Link to="submit-card">Post your own card</Link>
+      </Button>
     </Container>
   );
-};
-
-export default Cards;
+}
