@@ -219,3 +219,8 @@ p {
   text-align: center;
   padding: 10vh 0;
 }
+
+/* Privacy Policy */
+.privacy-policy > p {
+  color: black;
+}

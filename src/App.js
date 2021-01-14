@@ -10,6 +10,7 @@ import Admin from "./pages/Admin";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import AdminDelete from "./api/Admin-Delete";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/cards/:id/:operation" component={GetIdCard} />
         <Route exact path="/admin" component={Admin} />
         <Route path="/admin/:id/delete" component={AdminDelete} />
+        <Route path="/privacy-policy" component={PrivacyPolicy} />
       </Router>
       <Footer />
     </div>
