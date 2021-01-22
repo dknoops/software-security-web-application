@@ -1,16 +1,12 @@
 import { useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 export default function UpdateCard(props) {
   const history = useHistory();
   const { getAccessTokenSilently } = useAuth0();
-  const { id } = useParams();
   const data = {
-    card_id: id,
-    user_id: props.user_id,
     name: props.data.name,
   };
 
@@ -28,16 +24,14 @@ export default function UpdateCard(props) {
       },
     };
 
-    axios
-      .put(`${process.env.REACT_APP_API_URL}/cards/${id}`, data, header)
-      .then(
-        (response) => {
-          history.push("/profile");
-        },
-        (error) => {
-          //console.log(error);
-        }
-      );
+    axios.put(`${process.env.REACT_APP_API_URL}/users`, data, header).then(
+      (response) => {
+        history.push("/profile");
+      },
+      (error) => {
+        //console.log(error);
+      }
+    );
   };
 
   return <></>;

@@ -224,3 +224,16 @@ p {
 .privacy-policy > p {
   color: black;
 }
+
+.verify-email {
+  color: black;
+  text-align: center;
+}
+
+.verify-email > button > a {
+  color: white;
+}
+
+.verify-email > button > a:hover {
+  text-decoration: none;
+}

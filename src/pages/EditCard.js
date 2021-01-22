@@ -17,10 +17,7 @@ export default function EditCard(props) {
   };
 
   return (
-    <div
-      id="form-bg"
-      style={{ backgroundImage: "url(images/submit-card-bg.jpg)" }}
-    >
+    <div id="form-bg">
       <Container>
         <Form id="register-form" className="my-form" onSubmit={handleSubmit}>
           <h3>Edit your card</h3>
@@ -46,7 +43,9 @@ export default function EditCard(props) {
             Update
           </Button>
         </Form>
-        {onSubmit && <UpdateCard data={formData} />}
+        {onSubmit && (
+          <UpdateCard data={formData} user_id={props.data[0].user_id} />
+        )}
       </Container>
     </div>
   );

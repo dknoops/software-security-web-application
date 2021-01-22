@@ -37,7 +37,12 @@ export default function GetCards(props) {
       {props.cards.length !== 0 &&
         props.cards.map((card, i) => (
           <Col xs="3" key={i}>
-            <ProfileCard name={card.name} image={card.image} id={card.id} />
+            <ProfileCard
+              name={card.name}
+              image={card.image}
+              id={card.id}
+              user_id={card.user_id}
+            />
           </Col>
         ))}
     </>

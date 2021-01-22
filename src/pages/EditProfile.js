@@ -1,13 +1,18 @@
 import { useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+import { useParams } from "react-router-dom";
+import UpdateProfile from "../api/Update-Profile";
+import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import SubmitCard from "../api/Save-Card";
 
-export default function Register() {
+export default function EditProfile() {
+  const { user } = useAuth0();
+  const { name } = useParams();
   const [onSubmit, setOnSubmit] = useState(false);
   const [formData, setFormData] = useState({
-    name: "",
+    name: "" || name,
+    email: "" || user.email,
   });
 
   const handleSubmit = (evt) => {
@@ -16,13 +21,14 @@ export default function Register() {
   };
 
   return (
-    <div
-      id="form-bg"
-      style={{ backgroundImage: "url(images/submit-card-bg.jpg)" }}
-    >
+    <div id="form-bg">
       <Container>
-        <Form id="register-form" className="my-form" onSubmit={handleSubmit}>
-          <h3>Submit your own card</h3>
+        <Form
+          id="edit-profile-form"
+          className="my-form"
+          onSubmit={handleSubmit}
+        >
+          <h3>Edit your Profile</h3>
           <Form.Group controlId="form-title">
             <Form.Label>Name</Form.Label>
             <Form.Control
@@ -33,19 +39,19 @@ export default function Register() {
               }
             />
           </Form.Group>
-          {/* <Form.Group>
-            <Form.Label>Image</Form.Label>
-            <Form.File id="form-image" />
-          </Form.Group> */}
+          <Form.Group controlId="form-title">
+            <Form.Label>E-mail</Form.Label>
+            <Form.Control type="text" value={formData.email} disabled />
+          </Form.Group>
           <Button
             variant="primary"
             type="submit"
             className="register-button button"
           >
-            Submit
+            Update
           </Button>
         </Form>
-        {onSubmit && <SubmitCard data={formData} />}
+        {onSubmit && <UpdateProfile data={formData} sub={user.sub} />}
       </Container>
     </div>
   );
