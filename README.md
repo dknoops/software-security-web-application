@@ -53,7 +53,7 @@ https://github.com/dknoops/software-security-backend
 Datum aanmaken register: 22 januari 2021
 
 ## Registratie / Aanmelden (Auth0)
-Deze applicatie maakt gebruikt van Auth0 als 'identity provider'. Hierdoor maak ik gebruik van Auth0's eigen 'Password Dictionairy', wat een lijst is van de 10.000 meest gebruikte wachtwoorden, in tegenstelling tot het gebruiken van de HIBP API.
+Deze applicatie maakt gebruikt van Auth0 als 'identity provider'. Hierdoor maak ik gebruik van Auth0's eigen 'Password Dictionary', wat een lijst is van de 10.000 meest gebruikte wachtwoorden, in tegenstelling tot het gebruiken van de HIBP API.
 
 URL naar deze lijst: https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/10k-most-common.txt
 
