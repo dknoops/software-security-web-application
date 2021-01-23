@@ -60,4 +60,5 @@ URL naar deze lijst: https://github.com/danielmiessler/SecLists/blob/master/Pass
 ## Cookies
 Deze applicatie maakt geen gebruik van niet-noodzakelijke cookies.
 
-
+## Dependabot
+GitHub's Dependabot is ingeschakeld op deze repo zodat ik zo snel mogelijk op de hoogte wordt gebracht van nieuw ontdekte kwetsbaarheden in mijn dependencies.
